@@ -94,6 +94,14 @@ The [example site](https://peteryuen.netlify.app/) shows the capabilities of `ob
 - Set the path to the Obsisian vault using a `.vault_path` file or the `$VAULT` environment variable
 - use `./local-run.sh` to run the site
 
+# Build static files
+
+- add netlify.toml to vault
+- `docker build -t obsidian-zola:v1 .`
+- `cd parent-of-notebook`
+- `docker run --rm -v $(pwd)/notebook:/app/vault -v $(pwd)/output:/app/public obsidian-zola:v1`
+- static files should be in $(pwd)/output
+
 # Features 
 
 **Disclaimer**
